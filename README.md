@@ -1,2 +1,2 @@
 # ng-config
-Angular configuration loaded in the runtime. Build once, deploy everywhere.
+Angular configuration loaded in the runtime. Build once, deploy anywhere.
