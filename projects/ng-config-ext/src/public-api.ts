@@ -1,5 +1,5 @@
 /*
- * Public API Surface of ng-config
+ * Public API Surface of ng-config-ext
  */
 
 

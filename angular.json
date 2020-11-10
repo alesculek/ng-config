@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-config": {
+    "ng-config-ext": {
       "projectType": "library",
-      "root": "projects/ng-config",
-      "sourceRoot": "projects/ng-config/src",
+      "root": "projects/ng-config-ext",
+      "sourceRoot": "projects/ng-config-ext/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ng-config/tsconfig.lib.json",
-            "project": "projects/ng-config/ng-package.json"
+            "tsConfig": "projects/ng-config-ext/tsconfig.lib.json",
+            "project": "projects/ng-config-ext/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-config/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-config-ext/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-config/src/test.ts",
-            "tsConfig": "projects/ng-config/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-config/karma.conf.js"
+            "main": "projects/ng-config-ext/src/test.ts",
+            "tsConfig": "projects/ng-config-ext/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-config-ext/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-config/tsconfig.lib.json",
-              "projects/ng-config/tsconfig.spec.json"
+              "projects/ng-config-ext/tsconfig.lib.json",
+              "projects/ng-config-ext/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -43,32 +43,32 @@
         }
       }
     },
-    "ng-config-app": {
+    "ng-config-ext-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/ng-config-app",
-      "sourceRoot": "projects/ng-config-app/src",
+      "root": "projects/ng-config-ext-app",
+      "sourceRoot": "projects/ng-config-ext-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-config-app",
-            "index": "projects/ng-config-app/src/index.html",
-            "main": "projects/ng-config-app/src/main.ts",
-            "polyfills": "projects/ng-config-app/src/polyfills.ts",
-            "tsConfig": "projects/ng-config-app/tsconfig.app.json",
+            "outputPath": "dist/ng-config-ext-app",
+            "index": "projects/ng-config-ext-app/src/index.html",
+            "main": "projects/ng-config-ext-app/src/main.ts",
+            "polyfills": "projects/ng-config-ext-app/src/polyfills.ts",
+            "tsConfig": "projects/ng-config-ext-app/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/ng-config-app/src/favicon.ico",
-              "projects/ng-config-app/src/assets"
+              "projects/ng-config-ext-app/src/favicon.ico",
+              "projects/ng-config-ext-app/src/assets"
             ],
             "styles": [
-              "projects/ng-config-app/src/styles.scss"
+              "projects/ng-config-ext-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -76,8 +76,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/ng-config-app/src/environments/environment.ts",
-                  "with": "projects/ng-config-app/src/environments/environment.prod.ts"
+                  "replace": "projects/ng-config-ext-app/src/environments/environment.ts",
+                  "with": "projects/ng-config-ext-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -106,33 +106,33 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-config-app:build"
+            "browserTarget": "ng-config-ext-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-config-app:build:production"
+              "browserTarget": "ng-config-ext-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-config-app:build"
+            "browserTarget": "ng-config-ext-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-config-app/src/test.ts",
-            "polyfills": "projects/ng-config-app/src/polyfills.ts",
-            "tsConfig": "projects/ng-config-app/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-config-app/karma.conf.js",
+            "main": "projects/ng-config-ext-app/src/test.ts",
+            "polyfills": "projects/ng-config-ext-app/src/polyfills.ts",
+            "tsConfig": "projects/ng-config-ext-app/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-config-ext-app/karma.conf.js",
             "assets": [
-              "projects/ng-config-app/src/favicon.ico",
-              "projects/ng-config-app/src/assets"
+              "projects/ng-config-ext-app/src/favicon.ico",
+              "projects/ng-config-ext-app/src/assets"
             ],
             "styles": [
-              "projects/ng-config-app/src/styles.scss"
+              "projects/ng-config-ext-app/src/styles.scss"
             ],
             "scripts": []
           }
@@ -141,9 +141,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-config-app/tsconfig.app.json",
-              "projects/ng-config-app/tsconfig.spec.json",
-              "projects/ng-config-app/e2e/tsconfig.json"
+              "projects/ng-config-ext-app/tsconfig.app.json",
+              "projects/ng-config-ext-app/tsconfig.spec.json",
+              "projects/ng-config-ext-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -153,16 +153,16 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/ng-config-app/e2e/protractor.conf.js",
-            "devServerTarget": "ng-config-app:serve"
+            "protractorConfig": "projects/ng-config-ext-app/e2e/protractor.conf.js",
+            "devServerTarget": "ng-config-ext-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-config-app:serve:production"
+              "devServerTarget": "ng-config-ext-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "ng-config"
+  "defaultProject": "ng-config-ext"
 }

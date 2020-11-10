@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "ng-config": [
-        "dist/ng-config/ng-config",
-        "dist/ng-config"
+      "ng-config-ext": [
+        "dist/ng-config-ext/ng-config-ext",
+        "dist/ng-config-ext"
       ]
     }
   },

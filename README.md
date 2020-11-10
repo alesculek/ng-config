@@ -1,4 +1,4 @@
-# ng-config
+# ng-config-ext
 
 Angular configuration loaded in the runtime. Build once, deploy anywhere.
 
