@@ -2,9 +2,14 @@
   "name": "ng-config-ext",
   "description": "Angular configuration loaded in the runtime. Build once, deploy anywhere.",
   "version": "0.0.2-rc2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvikit/ng-config.git"
+  },
   "keywords": [
     "angular",
-    "config"
+    "config",
+    "front-end"
   ],
   "peerDependencies": {
     "@angular/common": "^9.1.12",
