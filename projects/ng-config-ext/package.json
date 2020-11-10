@@ -1,5 +1,6 @@
 {
   "name": "ng-config-ext",
+  "description": "Angular configuration loaded in the runtime. Build once, deploy anywhere.",
   "version": "0.0.2-rc1",
   "keywords": [
     "angular",
