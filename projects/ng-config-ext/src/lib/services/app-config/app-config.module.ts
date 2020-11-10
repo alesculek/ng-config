@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppConfigService } from './app-config.service';
@@ -14,16 +14,17 @@ export function appInitConfigFactory(appConfigService: AppConfigService) {
   return appInitConfig;
 }
 
-@NgModule()
+@NgModule({
+  imports: [
+    CommonModule,
+    HttpClientModule,
+  ],
+})
 export class AppConfigModule {
   
-  static fromConfig(config: AppConfigModuleConfig) {
+  static forRoot(config: AppConfigModuleConfig): ModuleWithProviders<AppConfigModule> {
     return {
       ngModule: AppConfigModule,
-      imports: [
-        CommonModule,
-        HttpClientModule,
-      ],
       providers: [
         {
           provide: APP_INITIALIZER,

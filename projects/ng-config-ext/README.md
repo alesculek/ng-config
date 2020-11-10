@@ -36,7 +36,7 @@ import { AppConfigModule } from 'ng-config-ext';
   imports: [
     BrowserModule,
     // Import the module with your own configuration
-    AppConfigModule.fromConfig({
+    AppConfigModule.forRoot({
       // Tell the module where the config is located
       url: '/api/config/',
     }),
