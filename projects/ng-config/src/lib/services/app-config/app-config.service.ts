@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import _ from 'lodash';
 import { AppConfigModuleConfig, AppConfigModuleConfigToken } from './app-config-module-config';
 
 @Injectable({
@@ -29,6 +28,10 @@ export class AppConfigService {
       return this.configData;
     }
 
-    return _.get(this.configData, key);
+    const lodashLikeGet = (obj: object, key: string) => key
+      .split('.')
+      .reduce((obj, pathKey) => obj[pathKey], obj);
+
+    return lodashLikeGet(this.configData, key);
   }
 }
