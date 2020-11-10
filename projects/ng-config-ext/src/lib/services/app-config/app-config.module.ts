@@ -9,7 +9,7 @@ export function appInitConfigFactory(appConfigService: AppConfigService) {
   // If the following function is returned immediatly via return () => ..., compiling fails
   // The root cause is "Lamba not supported"
   // see: https://github.com/ng-packagr/ng-packagr/issues/696
-  const appInitConfig = () => appConfigService.load().toPromise();
+  const appInitConfig = () => appConfigService.load();
 
   return appInitConfig;
 }

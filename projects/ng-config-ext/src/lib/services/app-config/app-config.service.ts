@@ -16,11 +16,11 @@ export class AppConfigService {
 
   configData: object;
 
-  load(): Observable<Object> {
-    const request: Observable<Object> = this.http.get(this.config.url);
-    request.subscribe({ next: response => this.configData = { ...response } });
-
-    return request;
+  load(): Promise<Object> {
+    return this.http
+      .get(this.config.url)
+      .toPromise()
+      .then(response => this.configData = response);
   }
 
   get(key: string = null): any {
