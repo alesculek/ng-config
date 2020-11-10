@@ -1,5 +1,11 @@
 # NgConfig
 
+Angular configuration loaded in the runtime. Build once, deploy anywhere.
+
+The main focus of this package is to externalize frontend configuration the app itself and allow loading the config via this package.
+As the configuration for your application is externalized, you can build your app once and decide on the configuration value when starting up.
+DevOps and QAs will love you.
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
 ## Code scaffolding
