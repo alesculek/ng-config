@@ -8,6 +8,68 @@ DevOps and QAs will love you.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
+## Basic usage
+
+1) Implement config endpoint in order to retrieve the configuration
+
+This can be achieved by many ways, from exposing a static file (json) to using your favourite web server.
+Here you can find an example with express and config package:
+
+```nodejs
+import config from 'config';
+
+app.get('/api/config/', (req, res) => {
+  res.set('Content-Type', 'application/json; charset=utf-8');
+  res.send(config);
+}
+```
+
+2) Fetch the config via ng-config-ext
+
+In your app.module.ts:
+
+```angular
+import { AppConfigModule } from 'ng-config-ext';
+
+@NgModule({
+  // ... th rest of the definition
+  imports: [
+    BrowserModule,
+    // Import the module with your own configuration
+    AppConfigModule.fromConfig({
+      // Tell the module where the config is located
+      url: '/api/config/',
+    }),
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule { }
+```
+
+Importing the module will register `APP_INITIALIZER` provider which performs HTTP request to retrieve the config during app startup.
+
+3) Require AppConfigService in order to get configuration value
+
+```angular
+import { Component } from '@angular/core';
+import { AppConfigService } from 'ng-config-ext';
+
+@Component({
+  selector: 'app-root',
+  template: '<span> {{ configVal }} </span>',
+})
+export class AppComponent {
+  configVal;
+
+  constructor(private configService: AppConfigService) {}
+
+  ngOnInit(): void {
+    // The parameter is dotted key path in your config object returned from the api
+    this.config = this.configService.get('foo.bar');
+  }
+}
+```
+
 ## Code scaffolding
 
 Run `ng generate component component-name --project ng-config-ext` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-config-ext`.
