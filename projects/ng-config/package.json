@@ -1,0 +1,17 @@
+{
+  "name": "ng-config",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "config"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^9.1.12",
+    "@angular/core": "^9.1.12",
+    "rxjs": "6.6.3"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0",
+    "lodash": "4.17.20"
+  }
+}
