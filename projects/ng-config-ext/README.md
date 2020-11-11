@@ -28,7 +28,7 @@ app.get('/api/config/', (req, res) => {
   // A good practice is to create a 'frontend' node in your config and use config.get('frontend')
   // instead of returning the whole configuration set.
   res.send(config);
-}
+});
 ```
 
 **2) Fetch the config via ng-config-ext**
@@ -90,7 +90,7 @@ to provide basic functionality for your frontend app.
 
 The package was primarly designed to solve loading a configuration via REST HTTP API in the same way among several projects.
 The intention was to leave the doors open for any other configuration providers.
-If you are missing some provider or you have an idea for a provider to be implemented, [please submit PR here]((https://github.com/tvikit/ng-config)).
+If you are missing some provider or you have an idea for a provider to be implemented, [please submit PR here](https://github.com/tvikit/ng-config).
 
 
 ## Contribute
